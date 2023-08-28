@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/eskiltorset/css-frameworks/issues"
   },
-  "homepage": "https://github.com/eskiltorset/css-frameworks#readme"
+  "homepage": "https://github.com/eskiltorset/css-frameworks#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.1"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1"
+  }
 }
