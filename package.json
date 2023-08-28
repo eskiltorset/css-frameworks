@@ -1,0 +1,25 @@
+{
+  "name": "css-frameworks",
+  "version": "0.0.1",
+  "description": "A social media application written with bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eskiltorset/css-frameworks.git"
+  },
+  "keywords": [
+    "css",
+    "frameworks",
+    "bootstrap",
+    "sass"
+  ],
+  "author": "Eskil Torset <eskiltorset@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eskiltorset/css-frameworks/issues"
+  },
+  "homepage": "https://github.com/eskiltorset/css-frameworks#readme"
+}
