@@ -1,11 +1,66 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+// Home page
 body {
-    background-color: rgb(49, 49, 59);
+    background-color: $primary-colour;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-a {
-    color: rgb(214, 214, 214);
+.nav-link, .navbar-brand, h2 {
+    color: $secondary-colour;
 }
+
+.container {
+    color: $third-colour;
+}
+
+.card {
+    background-color: $third-colour;
+    color: white;
+    border-radius: 0;
+}
+
+.followers {
+    background-color: white;
+    color: $third-colour;
+}
+
+.navbar-brand:hover {
+    text-decoration: none;
+    color: $secondary-colour;
+}
+
+.btn {
+    background-color: $secondary-colour;
+    color: white;
+    border-radius: 0;
+}
+
+.btn:hover {
+    background-color: $secondary-colour;
+    color: white;
+    box-shadow: 0 2px 10px $secondary-colour;
+}
+
+.nav-link:hover {
+    color: $third-colour;
+}
+
+
+// Profile Page
+.profile {
+    color:  white;
+}
+
+.posts {
+    background-color: white;
+}
+
+.post-title {
+    background-color: $third-colour;
+    color: white;
+}
+
+
 
