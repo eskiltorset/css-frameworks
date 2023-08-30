@@ -6,13 +6,13 @@
         <title>Authentication Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
         <!--<link rel="stylesheet" href="src/scss/styles.scss">-->
         <link rel="stylesheet" href="/dist/css/styles.css">
     </head>
     <body>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg">
+        <div class="container"> 
+            <nav class="navbar navbar-expand-lg border-bottom">
                 <a class="navbar-brand" href="index.html">CSS Frameworks</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,5 +32,64 @@
                 </div>
             </nav>
         </div>
+
+        <h2 class="text-center mt-5">Your Feed</h2>
+        <div class="container mt-4">
+            <div class="row">
+
+              <div class="profile col-md-3">
+                <div class="card">
+                    <img src="/images/meg2.jpg" class="rounded-circle rounded mx-auto d-block w-50 h-50 center mt-3" alt="Profile Picture">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">@eskiltorset</h5>
+                      <p class="card-text text-center">Frontend-developer / Student</p>
+                    </div>
+                    <div class="followers row mx-0 border-top">
+                        <p class="col-md-6 text-center m-auto p-3">Follows: 328</p>
+                        <p class="col-md-6 text-center m-auto">Followers: 13.1k</p>
+                        <button class="btn col-md-12 text-center align-items-center">Follow</button>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="posts col-md-6 p-0 mb-3">
+                <div class="post-title p-2 text-center">
+                    <h3 class="m-auto">Posts</h3>
+                </div>
+                <div class="post p-4 border-bottom">
+                    <h4>Post 1</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
+                </div>
+                <div class="post p-4 border-bottom">
+                    <h4>Post 2</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
+                </div>
+                <div class="post p-4 border-bottom">
+                    <h4>Post 3</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
+                </div>
+                <div class="post p-4 border-bottom">
+                    <h4>Post 4</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
+                </div>
+                <div class="post p-4 border-bottom">
+                    <h4>Post 5</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
+                </div>
+              </div>
+
+              <div class="search col-md-3">
+                <div class="input-group">
+                    <div class="form-outline">
+                      <input id="search-focus" type="search" id="form1" class="form-control" placeholder="Search"/>
+                    </div>
+                    <button type="button" class="btn">
+                      Search
+                    </button>
+                  </div>
+              </div>
+              
+            </div>
+          </div>
     </body>
 </html>

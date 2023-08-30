@@ -15,17 +15,6 @@ body {
     color: $third-colour;
 }
 
-.card {
-    background-color: $third-colour;
-    color: white;
-    border-radius: 0;
-}
-
-.followers {
-    background-color: white;
-    color: $third-colour;
-}
-
 .navbar-brand:hover {
     text-decoration: none;
     color: $secondary-colour;
@@ -34,7 +23,7 @@ body {
 .btn {
     background-color: $secondary-colour;
     color: white;
-    border-radius: 0;
+   
 }
 
 .btn:hover {
@@ -54,11 +43,23 @@ body {
 }
 
 .posts {
-    background-color: white;
+    background-color: rgb(36, 36, 36);
+    
+}
+
+.card {
+    background-color: $third-colour;
+    color: white;
+    border-radius: 0;
+}
+
+.followers {
+    background-color: $third-colour;
+    color: white;
 }
 
 .post-title {
-    background-color: $third-colour;
+    background-color: $secondary-colour;
     color: white;
 }
 

@@ -11871,17 +11871,6 @@ body {
   color: rgb(108, 108, 200);
 }
 
-.card {
-  background-color: rgb(108, 108, 200);
-  color: white;
-  border-radius: 0;
-}
-
-.followers {
-  background-color: white;
-  color: rgb(108, 108, 200);
-}
-
 .navbar-brand:hover {
   text-decoration: none;
   color: rgb(199, 98, 98);
@@ -11890,7 +11879,6 @@ body {
 .btn {
   background-color: rgb(199, 98, 98);
   color: white;
-  border-radius: 0;
 }
 
 .btn:hover {
@@ -11908,11 +11896,22 @@ body {
 }
 
 .posts {
-  background-color: white;
+  background-color: rgb(36, 36, 36);
+}
+
+.card {
+  background-color: rgb(108, 108, 200);
+  color: white;
+  border-radius: 0;
+}
+
+.followers {
+  background-color: rgb(108, 108, 200);
+  color: white;
 }
 
 .post-title {
-  background-color: rgb(108, 108, 200);
+  background-color: rgb(199, 98, 98);
   color: white;
 }
 
