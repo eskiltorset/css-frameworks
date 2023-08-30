@@ -1,7 +1,7 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-// Home page
+// Login page
 body {
     background-color: $primary-colour;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -43,7 +43,7 @@ body {
 }
 
 .posts {
-    background-color: rgb(36, 36, 36);
+    background-color: $fourth-colour;
     
 }
 
@@ -63,5 +63,15 @@ body {
     color: white;
 }
 
+
+// Feed page
+h5 {
+    color: $secondary-colour;
+}
+
+.nav-pills > li.active > a{
+    color: white;
+    background-color: $secondary-colour;
+}
 
 

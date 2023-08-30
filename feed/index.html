@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Authentication Page</title>
+        <title>Feed Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -33,46 +33,93 @@
             </nav>
         </div>
 
-        <h2 class="text-center mt-5">Your Feed</h2>
+        <!--<h2 class="text-center mt-5">Your Feed</h2>-->
         <div class="container mt-4">
             <div class="row">
 
-              <div class="profile col-md-3">
-                <div class="card">
-                    <img src="/images/meg2.jpg" class="rounded-circle rounded mx-auto d-block w-50 h-50 center mt-3" alt="Profile Picture">
-                    <div class="card-body">
-                      <h5 class="card-title text-center">@eskiltorset</h5>
-                      <p class="card-text text-center">Frontend-developer / Student</p>
-                    </div>
-                    <div class="followers row mx-0 border-top">
-                        <p class="col-md-6 text-center m-auto p-3">Follows: 328</p>
-                        <p class="col-md-6 text-center m-auto">Followers: 13.1k</p>
-                        <button class="btn col-md-12 text-center align-items-center">Follow</button>
-                    </div>
-                  </div>
+              <div class="menu col-md-3">
+                <div class="posts">
+                    <ul class="nav nav-pills nav-fill">
+                        <li class= "nav-item col-md-12 border-bottom border-top pt-3 pb-3">
+                            <a class="menu-item nav-link rounded-0" href="/feed/index.html">Home</a>
+                        </li>
+                        <li class="nav-item col-md-12 border-bottom pt-3 pb-3">
+                            <a class="menu-item nav-link rounded-0" href="#">Explore</a>
+                        </li>
+                        <li class="nav-item col-md-12 border-bottom pt-3 pb-3">
+                            <a class="menu-item nav-link rounded-0" href="/profile/index.html">My Profile</a>
+                        </li>
+                    </ul>
+                </div>
               </div>
 
               <div class="posts col-md-6 p-0 mb-3">
-                <div class="post-title p-2 text-center">
-                    <h3 class="m-auto">Posts</h3>
-                </div>
-                <div class="post p-4 border-bottom">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item active">
+                      <a class="nav-link rounded-0" aria-current="page" href="#">Discover</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link rounded-0" href="#">Following</a>
+                    </li>
+                </ul>
+
+                <form action="index.html" method="POST">
+                    
+                    <div class="form-group border-top px-4 pt-4">
+                        <h4 class="text-center">CREATE A POST</h4>
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" name="title" />
+                    </div>
+                    
+                    <div class="form-group px-4 pt-4">
+                        <label for="description">Description</label>
+                        <textarea rows="5" class="form-control" name="description" ></textarea>
+                    </div>
+
+                    <div class="form-group px-4 pt-4 pb-4">
+                        <button type="submit" class="btn">
+                            Create
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="post p-4 border-bottom border-top">
+                    <div class="w-25 pb-2">
+                        <img src="/images/meg2.jpg" class="w-25 img-fluid rounded-circle float start">
+                    </div>
+                    <h5>@eskiltorset</h5>
                     <h4>Post 1</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
                 </div>
                 <div class="post p-4 border-bottom">
+                    <div class="w-25 pb-2">
+                        <img src="/images/avatar.avif" class="w-25 img-fluid rounded-circle float start">
+                    </div>
+                    <h5>@anon</h5>
                     <h4>Post 2</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
                 </div>
                 <div class="post p-4 border-bottom">
+                    <div class="w-25 pb-2">
+                        <img src="/images/avatar.avif" class="w-25 img-fluid rounded-circle float start">
+                    </div>
+                    <h5>@anon2</h5>
                     <h4>Post 3</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
                 </div>
                 <div class="post p-4 border-bottom">
+                    <div class="w-25 pb-2">
+                        <img src="/images/avatar.avif" class="w-25 img-fluid rounded-circle float start">
+                    </div>
+                    <h5>@anon3</h5>
                     <h4>Post 4</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
                 </div>
                 <div class="post p-4 border-bottom">
+                    <div class="w-25 pb-2">
+                        <img src="/images/avatar.avif" class="w-25 img-fluid rounded-circle float start">
+                    </div>
+                    <h5>@anon4</h5>
                     <h4>Post 5</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
                 </div>
@@ -86,6 +133,29 @@
                     <button type="button" class="btn">
                       Search
                     </button>
+                  </div>
+                  <div class="mt-2 border-bottom">
+                    <h5 class="p-3 ms-2">Filters</h5>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input mx-1" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label ms-2" for="flexCheckDefault">
+                              Newest
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input mx-1" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label ms-2" for="flexCheckDefault">
+                              Popular
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input mx-1" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label mb-3 ms-2" for="flexCheckDefault">
+                              Random
+                            </label>
+                        </div>
+                    </div>
                   </div>
               </div>
               

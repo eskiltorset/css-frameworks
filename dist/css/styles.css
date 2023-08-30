@@ -11915,4 +11915,13 @@ body {
   color: white;
 }
 
+h5, .h5 {
+  color: rgb(199, 98, 98);
+}
+
+.nav-pills > li.active > a {
+  color: white;
+  background-color: rgb(199, 98, 98);
+}
+
 /*# sourceMappingURL=styles.css.map */
