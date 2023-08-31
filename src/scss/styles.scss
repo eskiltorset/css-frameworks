@@ -1,7 +1,7 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-// Login page
+// Login page + navbar
 body {
     background-color: $primary-colour;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -23,7 +23,6 @@ body {
 .btn {
     background-color: $secondary-colour;
     color: white;
-   
 }
 
 .btn:hover {
@@ -73,5 +72,6 @@ h5 {
     color: white;
     background-color: $secondary-colour;
 }
+
 
 
