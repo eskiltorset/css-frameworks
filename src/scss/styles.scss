@@ -3,36 +3,36 @@
 
 // Login page + navbar
 body {
-    background-color: $primary-colour;
+    background-color: $gray;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .nav-link, .navbar-brand, h2 {
-    color: $secondary-colour;
+    color: $orange;
 }
 
 .container {
-    color: $third-colour;
+    color: $purple;
 }
 
 .navbar-brand:hover {
     text-decoration: none;
-    color: $secondary-colour;
+    color: $orange;
 }
 
 .btn {
-    background-color: $secondary-colour;
+    background-color: $orange;
     color: white;
 }
 
 .btn:hover {
-    background-color: $secondary-colour;
+    background-color: $orange;
     color: white;
-    box-shadow: 0 2px 10px $secondary-colour;
+    box-shadow: 0 2px 10px $orange;
 }
 
 .nav-link:hover {
-    color: $third-colour;
+    color: $purple;
 }
 
 
@@ -42,35 +42,35 @@ body {
 }
 
 .posts {
-    background-color: $fourth-colour;
+    background-color: $black;
     
 }
 
 .card {
-    background-color: $third-colour;
+    background-color: $purple;
     color: white;
     border-radius: 0;
 }
 
 .followers {
-    background-color: $third-colour;
+    background-color: $purple;
     color: white;
 }
 
 .post-title {
-    background-color: $secondary-colour;
+    background-color: $orange;
     color: white;
 }
 
 
 // Feed page
 h5 {
-    color: $secondary-colour;
+    color: $orange;
 }
 
 .nav-pills > li.active > a{
     color: white;
-    background-color: $secondary-colour;
+    background-color: $orange;
 }
 
 
