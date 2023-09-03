@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Authentication Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/dist/css/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-sm border-bottom">
+                <a class="navbar-brand" href="index.html">CSS Frameworks</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active px-2">
+                            <a class="nav-link" href="../index.html">Login</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" href="../feed/index.html">Feed</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" href="../profile/index.html">Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+            <h2 class="text-center mt-5">Login Page</h2>
+            <div class="container mt-4 row mx-auto col-10 col-md-8 col-lg-6">
+            
+            <form class="form-horizontal" action="/profile/index.html">
+                <div class="form-group">
+                <label class="control-label col-sm-2 ms-1 mb-1" for="email">Email:</label>
+                <div class="col-sm-12">
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                </div>
+                </div>
+                <div class="form-group mt-3">
+                <label class="control-label col-sm-2 ms-1 mb-1" for="pwd">Password:</label>
+                <div class="col-sm-12">          
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required pattern="^()()[a-zA-Z\d]{8,25}$" title="Password must contain at least 8 characters.">
+                </div>
+                </div>
+                <div class="form-group mt-3">        
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                    <label><input type="checkbox" name="remember"> Remember me</label>
+                    </div>
+                </div>
+                </div>
+                <div class="form-group mt-3">        
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Login</button>
+                </div>
+                </div>
+            </form>
+            </div>
+          </div>
+    </body>
+</html>

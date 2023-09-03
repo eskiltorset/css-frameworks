@@ -4,7 +4,8 @@
   "description": "A social media application written with bootstrap",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/eskiltorset/css-frameworks/issues"
   },
-  "homepage": "https://github.com/eskiltorset/css-frameworks#readme"
+  "homepage": "https://github.com/eskiltorset/css-frameworks#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.1"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1"
+  }
 }

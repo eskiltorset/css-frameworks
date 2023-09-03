@@ -1,0 +1,77 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Login page + navbar
+body {
+    background-color: $gray;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.nav-link, .navbar-brand, h2 {
+    color: $orange;
+}
+
+.container {
+    color: $purple;
+}
+
+.navbar-brand:hover {
+    text-decoration: none;
+    color: $orange;
+}
+
+.btn {
+    background-color: $orange;
+    color: white;
+}
+
+.btn:hover {
+    background-color: $orange;
+    color: white;
+    box-shadow: 0 2px 10px $orange;
+}
+
+.nav-link:hover {
+    color: $purple;
+}
+
+
+// Profile Page
+.profile {
+    color:  white;
+}
+
+.posts {
+    background-color: $black;
+    
+}
+
+.card {
+    background-color: $purple;
+    color: white;
+    border-radius: 0;
+}
+
+.followers {
+    background-color: $purple;
+    color: white;
+}
+
+.post-title {
+    background-color: $orange;
+    color: white;
+}
+
+
+// Feed page
+h5 {
+    color: $orange;
+}
+
+.nav-pills > li.active > a{
+    color: white;
+    background-color: $orange;
+}
+
+
+
