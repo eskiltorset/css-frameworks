@@ -8,8 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="/dist/css/styles.css">
-    
-    
+        <script src="/scripts/feed/script.js"></script>
     </head>
     <body>
         <div class="container"> 
@@ -66,17 +65,17 @@
                     
                     <div class="form-group border-top px-4 pt-4">
                         <h4 class="text-center">CREATE A POST</h4>
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" name="title" />
+                        <label for="title_input">Title</label>
+                        <input type="text" class="form-control" name="title" id="title_input"/>
                     </div>
                     
                     <div class="form-group px-4 pt-4">
-                        <label for="description">Description</label>
-                        <textarea rows="5" class="form-control" name="description" ></textarea>
+                        <label for="description_input">Description</label>
+                        <textarea rows="5" class="form-control" name="description" id="description_input"></textarea>
                     </div>
 
                     <div class="form-group px-4 pt-4 pb-4">
-                        <button type="submit" class="btn">
+                        <button type="submit" class="btn" id="create_btn" onclick="post()">
                             Create
                         </button>
                     </div>
@@ -143,14 +142,14 @@
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input mx-1" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label ms-2" for="flexCheckDefault">
+                            <input class="form-check-input mx-1" type="checkbox" value="" id="flexCheckDefault2">
+                            <label class="form-check-label ms-2" for="flexCheckDefault2">
                               Popular
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input mx-1" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label mb-3 ms-2" for="flexCheckDefault">
+                            <input class="form-check-input mx-1" type="checkbox" value="" id="flexCheckDefault3">
+                            <label class="form-check-label mb-3 ms-2" for="flexCheckDefault3">
                               Random
                             </label>
                         </div>
