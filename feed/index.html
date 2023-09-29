@@ -61,7 +61,7 @@
                     </li>
                 </ul>
 
-                <form action="index.html">
+                <form action="index.html" onsubmit="post()">
                     
                     <div class="form-group border-top px-4 pt-4">
                         <h4 class="text-center">CREATE A POST</h4>
@@ -75,19 +75,23 @@
                     </div>
 
                     <div class="form-group px-4 pt-4 pb-4">
-                        <button type="submit" class="btn" id="create_btn" onclick="post()">
+                        <button type="submit" class="btn" id="create_btn">
                             Create
                         </button>
                     </div>
                 </form>
+
+                <div id="posts_section">
+                    
+                </div>
                 
-                <div class="post p-4 border-bottom border-top">
+                <!--<div class="post p-4 border-bottom border-top">
                     <div class="w-25 pb-2">
                         <img src="/images/meg2.jpg" class="w-25 img-fluid rounded-circle float start">
                     </div>
-                    <h5>@eskiltorset</h5>
-                    <h4>Post 1</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
+                    <h5 class="username">@eskiltorset</h5>
+                    <h4 class="title">Post 1</h4>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
                 </div>
                 <div class="post p-4 border-bottom">
                     <div class="w-25 pb-2">
@@ -120,7 +124,7 @@
                     <h5>@anon4</h5>
                     <h4>Post 5</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
-                </div>
+                </div>-->
               </div>
 
               <div class="search col-md-3">
