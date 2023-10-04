@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="/dist/css/styles.css">
-        <script src="/scripts/script.js"></script>
+        <script src="/scripts/login/register.js" defer></script>
     </head>
     <body>
         <div class="container">
@@ -32,8 +32,14 @@
             <h2 class="text-center mt-5">Register Account</h2>
             <div class="container mt-4 row mx-auto col-10 col-md-8 col-lg-6">
             
-            <form class="form-horizontal" id="loginForm" action="">
+            <form class="form-horizontal" id="loginForm" onsubmit="registerUser()">
                 <div class="form-group">
+                    <label class="control-label col-sm-2 ms-1 mb-1" for="name">Name:</label>
+                    <div class="col-sm-12">
+                        <input type="name" class="form-control" id="name_input" placeholder="Enter name" name="name" required>
+                    </div>
+                    </div>
+                <div class="form-group mt-3">
                 <label class="control-label col-sm-2 ms-1 mb-1" for="email">Email:</label>
                 <div class="col-sm-12">
                     <input type="email" class="form-control" id="email_input" placeholder="Enter email" name="email" required>
@@ -54,7 +60,7 @@
                 </div>
                 <div class="form-group mt-3">        
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default" onclick="checkRegister()">Create Account</button>
+                    <button type="submit" class="btn btn-default create-btn">Create Account</button>
                 </div>
                 </div>
             </form>
