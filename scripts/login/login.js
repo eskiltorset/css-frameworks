@@ -1,34 +1,92 @@
 const API_BASE_URL = "https://api.noroff.dev";
-//import { API_BASE_URL } from "./variables/script.js";
-// const API_BASE_URL = "https://api.noroff.dev";
-// import { preFillFormFields } from "./utils/login.js";
 
-function preFillFormFields() {
-  const savedEmail = localStorage.getItem("savedEmail");
-function preFillFormFields() {
-    document.getElementById("remember").checked = true;
-  }
-}
-
-// import { loginUser } from "./utils/login.js";
 async function loginUser(url, userData) {
   try {
     const postData = {
-async function loginUser(url, userData) {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
     }
+
+    const response = await fetch(url, postData);
+    console.log(response);
+    const json = await response.json();
+    console.log(json);
+
+    if (response.status === 200) {
+      console.log("Login successful!");
+      window.location.href = "/profile/index.html";
+    }
+
+    else {
+      console.log("Login failed!");
+    }
+
     const accessToken = json.accessToken;
     localStorage.setItem("accessToken", accessToken);
-    const loggedInUser = json.name;
+
     let loggedInUser = json.name;
     localStorage.setItem("loggedInUser", loggedInUser);
     console.log(`Name: ${localStorage.getItem("loggedInUser")}`);
     return json;
-document.addEventListener("DOMContentLoaded", function () {
-      const loginEmail = document.getElementById("loginEmail").value;
-      const loginPassword = document.getElementById("loginPassword").value;
 
-      userToLogin = {
-      let userToLogin = {
-        email: loginEmail,
-        password: loginPassword,
-      };
+  }
+  catch(error) {
+    console.error(error);
+  }
+}
+
+const loginForm = document.querySelector("#loginForm");
+
+loginForm.addEventListener("submit", async (event) => {
+
+  event.preventDefault();
+
+  try {
+    const emailInput = document.getElementById("email_input").value;
+    const pwdInput = document.getElementById("pwd").value;
+  
+    let userToLogin = {
+      email: emailInput,
+      password: pwdInput
+    };
+
+    const login_URL = `${API_BASE_URL}/api/v1/social/auth/login`;
+
+    await loginUser(login_URL, userToLogin);
+  }
+  catch(error) {
+    console.log(error);
+  }
+});
+
+async function getToken(url) {
+  try {
+    console.log(url);
+    const token = localStorage.getItem("accessToken");
+    console.log(token);
+    const fetchOptions = {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+      },
+    }
+
+    const response = await fetch(url, fetchOptions);
+    console.log(response);
+    const json = await response.json();
+    console.log(json);
+  }
+
+  catch(error) {
+    console.log(error);
+  }
+}
+
+const posts_URL = `${API_BASE_URL}/api/v1/social/posts`;
+
+//getToken(posts_URL);
+
