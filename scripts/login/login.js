@@ -62,31 +62,5 @@ loginForm.addEventListener("submit", async (event) => {
   }
 });
 
-async function getToken(url) {
-  try {
-    console.log(url);
-    const token = localStorage.getItem("accessToken");
-    console.log(token);
-    const fetchOptions = {
-      method: 'GET',
-      headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
-      },
-    }
 
-    const response = await fetch(url, fetchOptions);
-    console.log(response);
-    const json = await response.json();
-    console.log(json);
-  }
-
-  catch(error) {
-    console.log(error);
-  }
-}
-
-const posts_URL = `${API_BASE_URL}/api/v1/social/posts`;
-
-//getToken(posts_URL);
 
