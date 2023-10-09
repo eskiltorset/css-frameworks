@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="/dist/css/styles.css">
-        <script src="/scripts/feed/posts.js"></script>
+        <script src="/scripts/feed/posts.js" defer></script>
     </head>
     <body>
         <div class="container"> 
@@ -61,7 +61,7 @@
                     </li>
                 </ul>
 
-                <form action="index.html" onsubmit="post()">
+                <form id="postForm">
                     
                     <div class="form-group border-top px-4 pt-4">
                         <h4 class="text-center">CREATE A POST</h4>
@@ -72,6 +72,11 @@
                     <div class="form-group px-4 pt-4">
                         <label for="description_input">Description</label>
                         <textarea rows="5" class="form-control" name="description" id="description_input"></textarea>
+                    </div>
+
+                    <div class="form-group px-4 pt-4">
+                        <label for="media_input">Media URL</label>
+                        <input type="text" class="form-control" name="media" id="media_input"/>
                     </div>
 
                     <div class="form-group px-4 pt-4 pb-4">
@@ -85,46 +90,7 @@
                     
                 </div>
                 
-                <!--<div class="post p-4 border-bottom border-top">
-                    <div class="w-25 pb-2">
-                        <img src="/images/meg2.jpg" class="w-25 img-fluid rounded-circle float start">
-                    </div>
-                    <h5 class="username">@eskiltorset</h5>
-                    <h4 class="title">Post 1</h4>
-                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
-                </div>
-                <div class="post p-4 border-bottom">
-                    <div class="w-25 pb-2">
-                        <img src="/images/avatar.avif" class="w-25 img-fluid rounded-circle float start">
-                    </div>
-                    <h5>@anon</h5>
-                    <h4>Post 2</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
-                </div>
-                <div class="post p-4 border-bottom">
-                    <div class="w-25 pb-2">
-                        <img src="/images/avatar.avif" class="w-25 img-fluid rounded-circle float start">
-                    </div>
-                    <h5>@anon2</h5>
-                    <h4>Post 3</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
-                </div>
-                <div class="post p-4 border-bottom">
-                    <div class="w-25 pb-2">
-                        <img src="/images/avatar.avif" class="w-25 img-fluid rounded-circle float start">
-                    </div>
-                    <h5>@anon3</h5>
-                    <h4>Post 4</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
-                </div>
-                <div class="post p-4 border-bottom">
-                    <div class="w-25 pb-2">
-                        <img src="/images/avatar.avif" class="w-25 img-fluid rounded-circle float start">
-                    </div>
-                    <h5>@anon4</h5>
-                    <h4>Post 5</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
-                </div>-->
+               
               </div>
 
               <div class="search col-md-3">
