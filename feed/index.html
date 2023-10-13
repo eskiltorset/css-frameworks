@@ -6,9 +6,13 @@
         <title>Feed Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="/dist/css/styles.css">
-        <script src="/scripts/feed/posts.js" defer></script>
+        <script type="module" src="/scripts/feed/posts.js" defer></script>
+        <script type="module" src="/scripts/api/remove.js"></script>
+        <script type="module" src="/scripts/api/update.js"></script>
+        
     </head>
     <body>
         <div class="container"> 
@@ -66,17 +70,17 @@
                     <div class="form-group border-top px-4 pt-4">
                         <h4 class="text-center">CREATE A POST</h4>
                         <label for="title_input">Title</label>
-                        <input type="text" class="form-control" name="title" id="title_input"/>
+                        <input type="text" placeholder="My day" class="form-control" name="title" id="title_input"/>
                     </div>
                     
                     <div class="form-group px-4 pt-4">
                         <label for="description_input">Description</label>
-                        <textarea rows="5" class="form-control" name="description" id="description_input"></textarea>
+                        <textarea rows="3" placeholder="Lorem Ipsum ..." class="form-control" name="description" id="description_input" maxlength="200"></textarea>
                     </div>
 
                     <div class="form-group px-4 pt-4">
                         <label for="media_input">Media URL</label>
-                        <input type="text" class="form-control" name="media" id="media_input"/>
+                        <input type="text" placeholder="https://picsum.photos/200" class="form-control" name="media" id="media_input"/>
                     </div>
 
                     <div class="form-group px-4 pt-4 pb-4">
@@ -86,9 +90,32 @@
                     </div>
                 </form>
 
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <!-- <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        ...
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                    </div> -->
+                </div>
+
                 <div id="posts_section">
                     
                 </div>
+
+                
                 
                
               </div>
@@ -105,24 +132,24 @@
                   <div class="mt-2 border-bottom">
                     <h5 class="p-3 ms-2">Filters</h5>
                     <div>
-                        <div class="form-check">
-                            <input class="form-check-input mx-1" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label ms-2" for="flexCheckDefault">
-                              Newest
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input mx-1" type="checkbox" value="" id="flexCheckDefault2">
-                            <label class="form-check-label ms-2" for="flexCheckDefault2">
+                        <div class="form-check ms-2">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="popular">
+                            <label class="form-check-label" for="popular">
                               Popular
                             </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input mx-1" type="checkbox" value="" id="flexCheckDefault3">
-                            <label class="form-check-label mb-3 ms-2" for="flexCheckDefault3">
-                              Random
+                          </div>
+                          <div class="form-check ms-2">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="newest" checked>
+                            <label class="form-check-label" for="newest">
+                              Newest
                             </label>
-                        </div>
+                          </div>
+                          <div class="form-check ms-2 mb-2">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="oldest" checked>
+                            <label class="form-check-label" for="oldest">
+                              Oldest
+                            </label>
+                          </div>
                     </div>
                   </div>
               </div>

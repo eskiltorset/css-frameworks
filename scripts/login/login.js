@@ -17,7 +17,7 @@ async function loginUser(url, userData) {
 
     if (response.status === 200) {
       console.log("Login successful!");
-      window.location.href = "/profile/index.html";
+      window.location.href = "/feed/index.html";
     }
 
     else {

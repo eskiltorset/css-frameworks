@@ -6,11 +6,12 @@
         <title>Profile Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
         <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="/dist/css/styles.css">
-        <script type="module" src="/scripts/profile/script.js" defer></script>
-        <script type="module" src="/scripts/api/remove.js"></script>
-        <script type="module" src="/scripts/api/update.js"></script>
+        <script type=module src="/scripts/feed/singlePost.js" defer></script>
     </head>
     <body>
         <div class="container">
@@ -34,29 +35,11 @@
                 </div>
             </nav>
         </div>
-        <div class="container mt-4">
-            <div class="row">
+         <div class="container mt-4">
+           <div class="post_container">
 
-              <div class="profile col-md-4 px-0 px-md-2">
-                
-              </div>
+           </div>
+        </div> 
 
-              <div class="posts col-md-8 p-0 mb-3">
-                <div class="post-title p-2 text-center">
-                    <h3 class="m-auto">Posts</h3>
-                </div>
-                <div id="posts_section">
-                    
-                </div>
-                
-                <!-- <div class="post p-4 border-bottom">
-                    <div class="w-25 pb-2">
-                        <img src="/images/meg2.jpg" class="w-25 img-fluid rounded-circle float start">
-                    </div>
-                    <h5>@eskiltorset</h5>
-                    <h4>Post 5</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatem voluptate temporibus enim eveniet! Exercitationem assumenda accusamus totam consequuntur, ut magni, voluptas tempore earum obcaecati iusto soluta est aspernatur vitae?</p>
-                </div> -->
-              </div>
     </body>
 </html>
