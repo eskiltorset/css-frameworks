@@ -1,7 +1,6 @@
 import { remove } from "../api/remove.js";
 import { update } from "../api/update.js";
-
-const API_BASE_URL = "https://api.noroff.dev";
+import { API_BASE_URL } from "../variables/script.js";
 
 const loggedInUser = localStorage.getItem("loggedInUser");
 
@@ -23,7 +22,7 @@ async function fetchPosts(url) {
 
       json.forEach(postArray);
 
-      function postArray(post, i, arr){
+      function postArray(post){
 
         const posts_section = document.getElementById('posts_section');
         const profile = document.querySelector(".profile");
@@ -41,12 +40,12 @@ async function fetchPosts(url) {
                     </div>
                   </div>`;
 
-        if(json[i].author.name === loggedInUser){
+        if(post.author.name === loggedInUser){
 
             const anchor = document.createElement("a");
             const postDiv = document.createElement("div");
             postDiv.classList.add("post", "p-4", "border-bottom", "border-top");
-            postDiv.id = json[i].id;
+            postDiv.id = post.id;
 
             const avatarDiv = document.createElement("div");
             avatarDiv.classList.add("w-25", "pb-2");
@@ -56,21 +55,21 @@ async function fetchPosts(url) {
             avatarImg.alt = "Avatar Image";
             avatarImg.src = "/images/avatar.avif";
 
-            if(json[i].author.avatar){
-                avatarImg.src = json[i].author.avatar;
+            if(post.author.avatar){
+                avatarImg.src = post.author.avatar;
             }
 
             const username = document.createElement("h5");
             username.classList.add("username");
-            username.innerHTML = `@${json[i].author.name}`;
+            username.innerHTML = `@${post.author.name}`;
 
             const title = document.createElement("h4");
             title.classList.add("title", "fw-bolder");
-            title.innerHTML = json[i].title;
+            title.innerHTML = post.title;
             
             const description = document.createElement("p");
             description.classList.add("description");
-            description.innerHTML = json[i].body;
+            description.innerHTML = post.body;
 
             const buttonDiv = document.createElement("div");
             buttonDiv.classList.add("w-100", "mt-4");
@@ -78,7 +77,8 @@ async function fetchPosts(url) {
             const viewBtn = document.createElement("a");
             viewBtn.classList.add("view-btn", "btn-primary", "float-end", "text-decoration-none", "mx-2");
             viewBtn.innerHTML = "View post";
-            viewBtn.id = json[i].id;
+            viewBtn.id = post.id;
+            viewBtn.href = `/post/?id=${post.id}`;
 
             const editBtn = document.createElement("button");
             editBtn.classList.add("edit-btn", "btn-primary", "float-end", "mx-2");
@@ -88,8 +88,8 @@ async function fetchPosts(url) {
                 const postToUpdate = viewBtn.id;
                 try{
                     await update(postToUpdate, {
-                        title: "Updated title",
-                        body: "Updated text",
+                        title: "Updated title v2",
+                        body: "Updated text v2",
                         media: "https://picsum.photos/200"
                     });
                     console.log("Test succeed")
@@ -102,7 +102,7 @@ async function fetchPosts(url) {
 
             const removeBtn = document.createElement("button");
             removeBtn.classList.add("remove_btn", "btn-primary", "float-end", "mx-2");
-            removeBtn.id = json[i].id;
+            removeBtn.id = post.id;
             removeBtn.innerHTML = "Delete post";
             removeBtn.addEventListener("click", async () => {
                 console.log(removeBtn.id);
@@ -116,9 +116,13 @@ async function fetchPosts(url) {
                 
             });
 
+            const reactions = document.createElement("h8");
+            reactions.classList.add("reactions");
+            reactions.innerHTML = `Reactions: ${post.reactions.length}`;
+
             const comments = document.createElement("h8");
-            avatarDiv.classList.add("comments");
-            comments.innerHTML = `Comments: ${json[i].comments.length}`;
+            comments.classList.add("comments", "mx-2");
+            comments.innerHTML = `Comments: ${post.comments.length}`;
 
             posts_section.appendChild(anchor);
             anchor.appendChild(postDiv);
@@ -128,16 +132,17 @@ async function fetchPosts(url) {
             postDiv.appendChild(title);
             postDiv.appendChild(description);
             
-            if(json[i].media){
+            if(post.media){
                 const postImg = document.createElement("img"); 
                 postImg.classList.add("w-25");
                 postImg.alt = "Post Image";
-                postImg.src = json[i].media;
+                postImg.src = post.media;
 
                 postDiv.appendChild(postImg);
             }
 
             postDiv.appendChild(buttonDiv);
+            buttonDiv.appendChild(reactions);
             buttonDiv.appendChild(comments);
             buttonDiv.appendChild(editBtn);
             buttonDiv.appendChild(removeBtn);

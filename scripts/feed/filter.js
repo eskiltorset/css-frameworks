@@ -1,8 +1,7 @@
-// export async popular(){
-//     for(i = 0; i > json[i].comments.length; i++){
-//         fetchPosts(url)
-//     }
-// };
+export async popular(){
+    const mostComments = post.filter(post => post.comments.length > 0);
+        console.log(mostComments);
+};
 
 // export async newest(){
     

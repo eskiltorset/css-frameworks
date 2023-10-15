@@ -1,5 +1,7 @@
 const API_BASE_URL = "https://api.noroff.dev";
 
+const errorMessage = document.querySelector(".error-message");
+
 async function loginUser(url, userData) {
   try {
     const postData = {
@@ -11,7 +13,6 @@ async function loginUser(url, userData) {
     }
 
     const response = await fetch(url, postData);
-    console.log(response);
     const json = await response.json();
     console.log(json);
 
@@ -22,6 +23,7 @@ async function loginUser(url, userData) {
 
     else {
       console.log("Login failed!");
+      errorMessage.innerText = json.errors[0].message;
     }
 
     const accessToken = json.accessToken;

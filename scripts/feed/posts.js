@@ -1,11 +1,11 @@
-const API_BASE_URL = "https://api.noroff.dev";
-const fetchPosts_URL = `${API_BASE_URL}/api/v1/social/posts?limit=20&offset=125&_comments=true&_author=true&_reactions=true&_count=true`;
+import { API_BASE_URL } from "../variables/script.js";
+
+const fetchPosts_URL = `${API_BASE_URL}/api/v1/social/posts?limit=99&offset=125&_comments=true&_author=true&_reactions=true&_count=true`;
 
 async function fetchPosts(url) {
     try {
-      console.log(url);
       const token = localStorage.getItem("accessToken");
-      console.log(token);
+      
       const fetchOptions = {
         method: 'GET',
         headers: {
@@ -15,7 +15,6 @@ async function fetchPosts(url) {
       }
   
       const response = await fetch(url, fetchOptions);
-      console.log(response);
       const json = await response.json();
       console.log(json);
 
@@ -24,7 +23,6 @@ async function fetchPosts(url) {
       function postArray(post){
 
         const posts_section = document.getElementById('posts_section');
-        //const popular = document.querySelector("#popular");
 
         if(post.title){
 
@@ -66,8 +64,12 @@ async function fetchPosts(url) {
             viewBtn.id = post.id;
             viewBtn.href = `/post/?id=${post.id}`; 
 
+            const reactions = document.createElement("h8");
+            reactions.classList.add("reactions");
+            reactions.innerHTML = `Reactions: ${post.reactions.length}`;
+
             const comments = document.createElement("h8");
-            avatarDiv.classList.add("comments");
+            comments.classList.add("comments", "mx-2");
             comments.innerHTML = `Comments: ${post.comments.length}`;
 
             posts_section.appendChild(anchor);
@@ -87,9 +89,33 @@ async function fetchPosts(url) {
                 postDiv.appendChild(postImg);
             }
 
-            postDiv.appendChild(buttonDiv);  
+            postDiv.appendChild(buttonDiv);
+            buttonDiv.appendChild(reactions);  
             buttonDiv.appendChild(comments);
             buttonDiv.appendChild(viewBtn);
+
+            // POPULAR FILTER
+            const popular = document.querySelector("#popular");
+            popular.addEventListener("change", () => {
+
+                if (popular.checked) {
+
+                    const mostComments = json
+                    .filter(post => post.comments.length > 0 || post.reactions.length > 0);
+
+                    if(mostComments.includes(post)){
+                        postDiv.style.display = "block";
+                    }
+                    // postDiv.innerHTML += JSON.stringify(mostComments);  
+                    // postDiv.style.display = "block";
+                    else{
+                        postDiv.style.display = "none";
+                    }
+                }
+                else {
+                    postDiv.style.display = "block";
+                }
+            });
 
 
             // SEARCH BAR
@@ -104,10 +130,9 @@ async function fetchPosts(url) {
                 let title = post.title.toLowerCase();
               
                 if (body.includes(searchQuery) || title.includes(searchQuery)) {
-            
                     postDiv.style.display = "block";
-                } else {
-
+                } 
+                else {
                     postDiv.style.display = "none";
                 }
             });
@@ -116,12 +141,15 @@ async function fetchPosts(url) {
             }
 
         }
+
+        
     }
 
     catch(error) {
         console.log(error);
     }
-            
+       
+    
 }
   
 fetchPosts(fetchPosts_URL);
@@ -130,9 +158,7 @@ fetchPosts(fetchPosts_URL);
 async function createPost(url, postData) {
 
     try {
-        console.log(url);
         const token = localStorage.getItem("accessToken");
-        console.log(token);
         const fetchOptions = {
           method: 'POST',
           headers: {
@@ -143,7 +169,6 @@ async function createPost(url, postData) {
         }
     
         const response = await fetch(url, fetchOptions);
-        console.log(response);
         const json = await response.json();
         console.log(json);
 

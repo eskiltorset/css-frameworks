@@ -1,10 +1,10 @@
-const API_BASE_URL = "https://api.noroff.dev/api/v1/social/posts/";
+import { API_BASE_URL } from "../variables/script.js";
+
+const remove_URL = `${API_BASE_URL}/api/v1/social/posts/`;
 
 export async function remove(id = 0){
     const token = localStorage.getItem('accessToken');
-    const url = `${API_BASE_URL}${id}`
-
-    console.log(token);
+    const url = `${remove_URL}${id}`
 
     if(!token){
         throw new Error("You must be logged in to delete a post.");
@@ -29,18 +29,3 @@ export async function remove(id = 0){
 
     throw new Error("could not delete this item.");
 }
-
-// async function listener() {
-//     try{
-//         const removeBtn = document.querySelector(".remove_btn");
-//         removeBtn.addEventListener("click", async ({ target }) => {
-//             await remove(target.id)
-//         });
-//     }
-//     catch (error){
-//         showError("Something went wrong.")
-//         console.warn(error);
-//     }
-    
-// }
-
