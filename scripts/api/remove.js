@@ -2,6 +2,11 @@ import { API_BASE_URL } from "../variables/script.js";
 
 const remove_URL = `${API_BASE_URL}/api/v1/social/posts/`;
 
+/**
+ * Removes a post from the Rest API
+ * @param {number} id ID of the post
+ * @returns {string} deletes the post if the user has authentication for it
+ */
 export async function remove(id = 0){
     const token = localStorage.getItem('accessToken');
     const url = `${remove_URL}${id}`

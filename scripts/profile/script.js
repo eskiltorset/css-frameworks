@@ -4,6 +4,11 @@ import { API_BASE_URL } from "../variables/script.js";
 
 const loggedInUser = localStorage.getItem("loggedInUser");
 
+/**
+ * Fetches a users own posts from the Rest API
+ * @param {string} url Rest API URL for profile
+ * @returns {string} All posts the user has posted in the Rest API URL
+ */
 async function fetchPosts(url) {
     try {
       const token = localStorage.getItem("accessToken");

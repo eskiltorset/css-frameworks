@@ -1,5 +1,5 @@
-//import { API_BASE_URL } from "./variables/script.js";
-const API_BASE_URL = "https://api.noroff.dev";
+import { API_BASE_URL } from "../variables/script.js";
+
 const register_URL = `${API_BASE_URL}/api/v1/social/auth/register`;
 
 const errorMessage = document.querySelector(".error-message");
@@ -14,13 +14,13 @@ const user = {
     password: passwordStored, 
 };
 
+/**
+ * Registers a new user 
+ * @param {string} url Rest API URL for register 
+ * @param {string} userData Data of user input
+ * @returns {string} A successfull register message or an error if the reqirements is not met
+ */
 async function registerUser(url, userData) {
-
-    let nameInput = document.getElementById("name_input").value;
-    let emailInput = document.getElementById("email_input").value;
-    let pwdInput = document.getElementById("pwd").value;
-
-    
 
     try {
         const postData = {
@@ -31,37 +31,58 @@ async function registerUser(url, userData) {
             body: JSON.stringify(userData),
         };
 
-        localStorage.setItem("name", (nameInput));
-        localStorage.setItem("email", (emailInput));
-        localStorage.setItem("password", (pwdInput));
-
         const response = await fetch(url, postData);
         console.log(response);
         const json = await response.json();
         console.log(json);
-        return json;
 
-        
+        if (response.status === 201) {
+            console.log("Register successful!");
+            errorMessage.innerText = "Register successfull!";
+            errorMessage.classList.add("text-success");
+            errorMessage.classList.remove("text-danger");
+        }
+      
+        else {
+            console.log("Register failed!");
+            errorMessage.innerText = json.errors[0].message;
+            errorMessage.classList.add("text-danger");
+            errorMessage.classList.remove("text-success");
+        }
 
     } catch (error) {
-        errorMessage.innerText = error;
+        errorMessage.innerHTML = error.errors[0].message;
+        
         console.log(error);
     }
-
-    nameInput.addEventListener("keyup", (e) => {
-
-        console.log(nameInput);
-      
-        if (nameInput.length < 10) {
-            errorMessage.innerText = error;
-        } 
-        else {
-            errorMessage.innerText = "";
-        }
-    });
 }
 
-registerUser(register_URL, user);
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", async (event) => {
+
+    event.preventDefault();
+
+    let nameInput = document.getElementById("name_input").value;
+    let emailInput = document.getElementById("email_input").value;
+    let pwdInput = document.getElementById("pwd").value;
+
+        try {
+
+            let user = {
+                name: nameInput,
+                email: emailInput,
+                password: pwdInput, 
+            };
+
+            await registerUser(register_URL, user);
+        }
+
+        catch(error) {
+            console.log(error);
+            errorMessage.innerHTML = "lol";
+        }
+});
 
 
 

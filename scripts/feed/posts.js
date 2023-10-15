@@ -2,6 +2,11 @@ import { API_BASE_URL } from "../variables/script.js";
 
 const fetchPosts_URL = `${API_BASE_URL}/api/v1/social/posts?limit=99&offset=125&_comments=true&_author=true&_reactions=true&_count=true`;
 
+/**
+ * Fetches 99 posts from the Rest API
+ * @param {string} url Rest API URL for posts
+ * @returns {string} All posts in the Rest API URL with a limit of 99
+ */
 async function fetchPosts(url) {
     try {
       const token = localStorage.getItem("accessToken");
@@ -106,8 +111,7 @@ async function fetchPosts(url) {
                     if(mostComments.includes(post)){
                         postDiv.style.display = "block";
                     }
-                    // postDiv.innerHTML += JSON.stringify(mostComments);  
-                    // postDiv.style.display = "block";
+
                     else{
                         postDiv.style.display = "none";
                     }
@@ -137,12 +141,8 @@ async function fetchPosts(url) {
                 }
             });
 
-           
             }
-
         }
-
-        
     }
 
     catch(error) {
@@ -154,7 +154,12 @@ async function fetchPosts(url) {
   
 fetchPosts(fetchPosts_URL);
 
-
+/**
+ * Creates a post which is saved in the Rest API
+ * @param {string} url Rest API URL for 'post' posts
+ * @param {string} postData Data of post input
+ * @returns {string} The post to the Rest API URL if the requirements are met
+ */
 async function createPost(url, postData) {
 
     try {

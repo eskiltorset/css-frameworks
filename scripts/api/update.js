@@ -2,6 +2,11 @@ import { API_BASE_URL } from "../variables/script.js";
 
 const update_URL = `${API_BASE_URL}/api/v1/social/posts/`;
 
+/**
+ * Updates a post from the Rest API
+ * @param {number} id ID of the post
+ * @returns {string} updates the post if the user has authentication for it
+ */
 export async function update(id, newPostData){
     const token = localStorage.getItem('accessToken');
     const url = `${update_URL}${id}`

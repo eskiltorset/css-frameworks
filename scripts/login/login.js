@@ -2,6 +2,12 @@ const API_BASE_URL = "https://api.noroff.dev";
 
 const errorMessage = document.querySelector(".error-message");
 
+/**
+ * Checks if the values in userData is a registered user in the Rest API 
+ * @param {string} url Rest API URL for login 
+ * @param {string} userData Data of user input
+ * @returns {string} A successfull login message if the input is correct and redirected to feed or error
+ */
 async function loginUser(url, userData) {
   try {
     const postData = {
