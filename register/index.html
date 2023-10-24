@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Authentication Page</title>
+        <title>Register Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="/dist/css/styles.css">
-        <script src="scripts/login/login.js" defer></script>
+        <script type="module" src="/scripts/login/register.js" defer></script>
     </head>
     <body>
         <div class="container">
@@ -17,46 +17,46 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item active px-2">
-                            <a class="nav-link" href="/register/index.html">Register</a>
+                            <a class="nav-link" href="../index.html">Login</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
-            <h2 class="text-center mt-5">Login Page</h2>
+            <h2 class="text-center mt-5">Register Account</h2>
             <div class="container mt-4 row mx-auto col-10 col-md-8 col-lg-6">
             
             <form class="form-horizontal" id="loginForm">
                 <div class="form-group">
+                    <label class="control-label col-sm-2 ms-1 mb-1" for="name">Name:</label>
+                    <div class="col-sm-12">
+                        <input type="name" class="form-control" id="name_input" placeholder="OlaNordmann" name="name" required title="Name can't contain blankspace.">
+                    </div>
+                    </div>
+                <div class="form-group mt-3">
                 <label class="control-label col-sm-2 ms-1 mb-1" for="email">Email:</label>
                 <div class="col-sm-12">
-                    <input type="email" class="form-control" id="email_input" placeholder="Enter email" name="email" >
-                    <p class="email-msg text-danger"></p>
+                    <input type="email" class="form-control" id="email_input" placeholder="ola.normann@stud.noroff.no" name="email" required>
                 </div>
                 </div>
                 <div class="form-group mt-3">
                 <label class="control-label col-sm-2 ms-1 mb-1" for="pwd">Password:</label>
                 <div class="col-sm-12">          
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd"  pattern="^()()[a-zA-Z\d]{8,25}$" title="Password must contain at least 8 characters.">
-                    <p class="pwd-msg text-danger"></p>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password (min. 8 characters)" name="pwd" required pattern="^()()[a-zA-Z\d]{8,25}$" title="Password must contain at least 8 characters.">
                 </div>
-                <div class="error-message text-danger"></div>
                 </div>
+                <div class="error-message mt-2"></div>
                 <div class="form-group mt-3">        
                 <div class="col-sm-offset-2 col-sm-10">
                     <div class="checkbox">
-                    <label><input type="checkbox" name="remember"> Remember me</label>
+                    <label><input type="checkbox" name="remember"> User Agreement</label>
                     </div>
                 </div>
                 </div>
                 <div class="form-group mt-3">        
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default login-btn">Login</button>
+                    <button type="submit" class="btn btn-default create-btn">Create Account</button>
                 </div>
-                <div class="form-group mt-3">        
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <a class="btn" href="/register/index.html">Create Account</a>
-                    </div>
                 </div>
             </form>
             </div>
